@@ -23,7 +23,7 @@ int main() {
         pc = 'O';
     }
 
-    printf("You are playing as a %c\n", player);
+    printf("You are playing as \"%c\"\n", player);
 
     while(true) {
         drawBoard(table);
@@ -35,7 +35,6 @@ int main() {
             break;
         }
         secondMove(table, player, pc);
-        drawBoard(table);
         if(checkWinner(table, player, pc)) {
             break;
         } else if(checkDraw(table)) {
