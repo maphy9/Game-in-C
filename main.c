@@ -27,6 +27,11 @@ int main() {
 
     while(true) {
         drawBoard(table);
+        if(checkWinner(table, player, pc)) {
+            break;
+        } else if(checkDraw(table)) {
+            break;
+        }
         firstMove(table, player, pc);
         drawBoard(table);
         if(checkWinner(table, player, pc)) {
@@ -35,11 +40,6 @@ int main() {
             break;
         }
         secondMove(table, player, pc);
-        if(checkWinner(table, player, pc)) {
-            break;
-        } else if(checkDraw(table)) {
-            break;
-        }
     }
 
     return 0;
